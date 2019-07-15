@@ -4,7 +4,7 @@
 #
 Name     : mvn-maven-deploy-plugin
 Version  : 2.8.2
-Release  : 2
+Release  : 3
 URL      : https://github.com/apache/maven-deploy-plugin/archive/maven-deploy-plugin-2.8.2.tar.gz
 Source0  : https://github.com/apache/maven-deploy-plugin/archive/maven-deploy-plugin-2.8.2.tar.gz
 Source1  : https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-deploy-plugin/2.8.2/maven-deploy-plugin-2.8.2.jar
@@ -12,15 +12,35 @@ Source2  : https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-d
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : Apache-2.0
+Requires: mvn-maven-deploy-plugin-data = %{version}-%{release}
 
 %description
 No detailed description available
+
+%package data
+Summary: data components for the mvn-maven-deploy-plugin package.
+Group: Data
+
+%description data
+data components for the mvn-maven-deploy-plugin package.
+
 
 %prep
 
 %build
 
 %install
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/apache/maven/plugins/maven-deploy-plugin/2.8.2
+cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/org/apache/maven/plugins/maven-deploy-plugin/2.8.2
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/apache/maven/plugins/maven-deploy-plugin/2.8.2
+cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/org/apache/maven/plugins/maven-deploy-plugin/2.8.2
+
 
 %files
 %defattr(-,root,root,-)
+
+%files data
+%defattr(-,root,root,-)
+/usr/share/java/.m2/repository/org/apache/maven/plugins/maven-deploy-plugin/2.8.2/maven-deploy-plugin-2.8.2.jar
+/usr/share/java/.m2/repository/org/apache/maven/plugins/maven-deploy-plugin/2.8.2/maven-deploy-plugin-2.8.2.pom
