@@ -4,7 +4,7 @@
 #
 Name     : mvn-maven-deploy-plugin
 Version  : 2.8.2
-Release  : 4
+Release  : 5
 URL      : https://github.com/apache/maven-deploy-plugin/archive/maven-deploy-plugin-2.8.2.tar.gz
 Source0  : https://github.com/apache/maven-deploy-plugin/archive/maven-deploy-plugin-2.8.2.tar.gz
 Source1  : https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-deploy-plugin/2.7/maven-deploy-plugin-2.7.jar
